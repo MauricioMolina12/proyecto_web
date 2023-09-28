@@ -1,5 +1,5 @@
 from flask import Flask, redirect, request, jsonify, json, session, render_template
-from.config.bd import app, db
+from config.bd import app, db
 
 @app.route("/")
 def index():
