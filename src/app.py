@@ -2,6 +2,7 @@ from flask import Flask, redirect, request, jsonify, json, session, render_templ
 from config.bd import app, db
 
 from API.usuario import ruta_usuario
+from API.comunidad import ruta_comunidad
 # from api.Ruta import  ruta_ruta
 # from api.Alertas import ruta_alertas
 
