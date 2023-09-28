@@ -3,12 +3,15 @@ from config.bd import app, db
 
 from API.usuario import ruta_usuario
 from API.comunidad import ruta_comunidad
-# from api.Ruta import  ruta_ruta
-# from api.Alertas import ruta_alertas
+from API.publicaciones import ruta_publicaciones
+from API.usu_com import ruta_usu_com
+
 
 app.register_blueprint(ruta_usuario, url_prefix="/api")
-# app.register_blueprint(ruta_ruta, url_prefix="/api")
-# app.register_blueprint(ruta_alertas, url_prefix="/api")
+app.register_blueprint(ruta_comunidad, url_prefix="/api")
+app.register_blueprint(ruta_publicaciones, url_prefix="/api")
+app.register_blueprint(ruta_usu_com, url_prefix="/api")
+
 
 @app.route("/")
 def index():
@@ -17,5 +20,3 @@ def index():
 if __name__ == "__main__":
     app.run(debug=True)
 
-    #hola
-#cambio
