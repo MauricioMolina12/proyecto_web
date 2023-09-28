@@ -8,9 +8,9 @@ comunidad_schema = ComunidadSchema()
 comunidades_schema = ComunidadSchema(many=True)
 
 @ruta_comunidad.route("/comunidad", methods=["GET"])
-def comunidad():
+def comunidades():
     resultall = comunidad.query.all()
-    result = comunidad_schema.dump(resultall)
+    result = comunidades_schema.dump(resultall)
     return jsonify(result)
 
 @ruta_comunidad.route("/savecomunidad", methods=["POST"])
@@ -23,9 +23,10 @@ def savecomunidad():
 
 @ruta_comunidad.route("/updatecomunidad", methods=["PUT"])
 def updatecomunidad():
-    id = request.json['id_comunidad']
+    id = request.json['id']
     nombre = request.json['nombre']
     ncomunidad = comunidad.query.get(id) 
+    ncomunidad.nombre = nombre
     db.session.commit()
     return "Datos Actualizado con exitos"
 
@@ -34,5 +35,5 @@ def deletecomunidad(id):
     communities = comunidad.query.get(id)
     db.session.delete(communities)
     db.session.commit()
-    return jsonify(comunidad_schema.dump(comunidad))
+    return jsonify(comunidad_schema.dump(communities))
 

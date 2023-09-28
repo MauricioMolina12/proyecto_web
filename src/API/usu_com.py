@@ -10,7 +10,7 @@ usu_comu_schema = usu_comSchema(many=True)
 @ruta_usu_com.route("/usu_com", methods=["GET"])
 def usu_com():
     resultall = usu_com.query.all()
-    result = usu_com_schema.dump(resultall)
+    result = usu_comu_schema.dump(resultall)
     return jsonify(result)
 
 @ruta_usu_com.route("/saveusu_com", methods=["POST"])

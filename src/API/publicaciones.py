@@ -9,8 +9,8 @@ publicaciones_schema = PublicacionesSchema(many=True)
 
 @ruta_publicaciones.route("/publicacion", methods=["GET"])
 def publicacion():
-    resultall = publicacion.query.all()
-    result = publicacion_schema.dump(resultall)
+    resultall = publicaciones.query.all()
+    result = publicaciones_schema.dump(resultall)
     return jsonify(result)
 
 @ruta_publicaciones.route("/savepublicacion", methods=["POST"])

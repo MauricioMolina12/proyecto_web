@@ -11,7 +11,7 @@ usuarios_schema = UsuarioSchema(many=True)
 @ruta_usuario.route("/usuarios", methods=["GET"])
 def usuarios():
     resultall = usuario.query.all()
-    result = usuario_schema.dump(resultall)
+    result = usuarios_schema.dump(resultall)
     return jsonify(result)
 
 @ruta_usuario.route("/saveusuario", methods=["POST"])
@@ -21,7 +21,7 @@ def saveusuario():
     contraseña = request.json['contraseña']
     new_user = usuario(nombre,correo,contraseña)
     db.session.add(new_user)
-    db.session.commit()
+    db.session.commit() 
     return "Datos guardados con exitos"
 
 @ruta_usuario.route("/updateusuario", methods=["PUT"])
@@ -40,7 +40,7 @@ def updateusuario():
 @ruta_usuario.route("/deleteusuario/<id>", methods=["GET"])
 def deleteusuario(id):
     user = usuario.query.get(id)
-    db.session.delete(usuario)
+    db.session.delete(user)
     db.session.commit()
-    return jsonify(usuario_schema.dump(usuario))
+    return jsonify(usuario_schema.dump(user))
 
