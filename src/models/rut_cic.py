@@ -5,10 +5,10 @@ class rut_cic(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     idciclovias = db.Column(db.Integer, db.ForeignKey('ciclovias.id'))
-    idrutas = db.Column(db.Integer, db.ForeignKey('rutas.id'))
+    idrutas = db.Column(db.Integer, db.ForeignKey('rutas.id_ruta'))
 
-    def __init__(self, idciclovia, idrutas):
-        self.idciclovias= idciclovia
+    def __init__(self, idciclovias, idrutas):
+        self.idciclovias= idciclovias
         self.idrutas = idrutas
 
 with app.app_context():
@@ -16,4 +16,4 @@ with app.app_context():
 
 class Rut_CicSchema(ma.Schema):
     class Meta:
-        fields = ('id','idciclovia', 'idrutas')
+        fields = ('id','idciclovias', 'idrutas')

@@ -4,13 +4,13 @@ class alertas(db.Model):
     __tablename__ = "alertas"
 
     id = db.Column(db.Integer, primary_key = True)
-    idusuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    idusuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'))
     idciclovia = db.Column(db.Integer, db.ForeignKey('ciclovias.id'))
     tipo_alerta = db.Column(db.String(50))
     descripcion = db.Column(db.String(50))
     latitud_alerta = db.Column(db.String(50))
     longitud_alerta = db.Column(db.String(50))
-    fecha_hora = db.Column(db.timestamp(50))
+    fecha_hora = db.Column(db.DateTime(50))
 
     def __init__(self, idusuario, idciclovia, tipo_alerta, descripcion, latitud_alerta, longitud_alerta, fecha_hora):
         self.idusuario =  idusuario

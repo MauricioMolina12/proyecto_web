@@ -2,14 +2,13 @@ from flask import Blueprint, jsonify, request,json
 from config.bd import db, app, ma
 from models.ciclovias import ciclovias, CicloviasSchema
 
-ruta_usuario = Blueprint("ciclovia_usuario",__name__)
-#routes_cliente = Blueprint("routes_cliente", __name__)
+ciclovia_usuario = Blueprint("ruta_ciclovias",__name__)
 
 ciclovia_schema = CicloviasSchema()   
 ciclovias_schema = CicloviasSchema(many=True)
 
 @ciclovia_usuario.route("/ciclovias", methods=["GET"])
-def ciclovias():
+def ciclovia():
     resultall = ciclovias.query.all()
     result = ciclovias_schema.dump(resultall)
     return jsonify(result)
@@ -34,7 +33,7 @@ def updateciclovia():
     descripcion = request.json['descripcion']
     longitud_latitud_inicial = request.json['longitud_latitud_inicial']
     longitud_latitud_final = request.json['longitud_latitud_final']
-    nciclovias = ciclovias.query.get(id) #Select * from usuario where id = id
+    nciclovias = ciclovias.query.get(id) 
     nciclovias.idpunto_e = idpunto_e
     nciclovias.nombre = nombre
     nciclovias.descripcion = descripcion
