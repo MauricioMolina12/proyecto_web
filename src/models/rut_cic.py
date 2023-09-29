@@ -1,0 +1,19 @@
+from config.bd import app, db, ma
+
+class rut_cic(db.Model):
+    __tablename__ = "rut_cic"
+
+    id = db.Column(db.Integer, primary_key = True)
+    idciclovias = db.Column(db.Integer, db.ForeignKey('ciclovias.id'))
+    idrutas = db.Column(db.Integer, db.ForeignKey('rutas.id'))
+
+    def __init__(self, idciclovia, idrutas):
+        self.idciclovias= idciclovia
+        self.idrutas = idrutas
+
+with app.app_context():
+    db.create_all()
+
+class Rut_CicSchema(ma.Schema):
+    class Meta:
+        fields = ('id','idciclovia', 'idrutas')

@@ -9,7 +9,7 @@ puntosE_schema = puntosESchema(many=True)
 
 @ruta_puntosE.route("/puntosE", methods=["GET"])
 def puntosE():
-    resultall = puntosE.query.all()
+    resultall = puntos_e.query.all()
     result = puntosE_schema.dump(resultall)
     return jsonify(result)
 
@@ -38,6 +38,7 @@ def updatepuntosE():
     npuntosE.nombre = nombre
     npuntosE.longitud = longitud
     npuntosE.latitud = latitud
+    npuntosE.comentarios = comentarios
     db.session.commit()
     return "Datos Actualizado con exitos"
 

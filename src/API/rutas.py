@@ -9,7 +9,7 @@ ruta_schema = RutasSchema()
 rutas_schema = RutasSchema(many=True)
 
 @ruta_rutas.route("/rutas", methods=["GET"])
-def rutas():
+def ruta():
     resultall = rutas.query.all()
     result = rutas_schema.dump(resultall)
     return jsonify(result)
@@ -20,11 +20,11 @@ def saverutas():
     usuario = request.json['usuario']
     nombre_ruta = request.json['nombre_ruta']
     descripcion_ruta = request.json['descripcion_ruta']
-    longitud_ruta = request.json['longitud_ruta']
-    latitud_ruta = request.json['latitud_ruta']
+    longitud_latitud_inicial = request.json['longitud_latitud_inicial']
+    longitud_latitud_final = request.json['longitud_latitud_final']
     fecha_creacion = request.json['fecha_creacion']
     duracion = request.json['duracion']
-    new_rout = rutas(puntos,usuario,nombre_ruta,descripcion_ruta,longitud_ruta,latitud_ruta,fecha_creacion,duracion)
+    new_rout = rutas(puntos,usuario,nombre_ruta,descripcion_ruta,longitud_latitud_inicial,longitud_latitud_final,fecha_creacion,duracion)
     db.session.add(new_rout)
     db.session.commit() 
     return "Datos guardados con exitos"
@@ -36,8 +36,8 @@ def updaterutas():
     usuario = request.json['usuario']
     nombre_ruta = request.json['nombre_ruta']
     descripcion_ruta = request.json['descripcion_ruta']
-    longitud_ruta = request.json['longitud_ruta']
-    latitud_ruta = request.json['latitud_ruta']
+    longitud_latitud_inicial = request.json['longitud_latitud_inicial']
+    longitud_latitud_final = request.json['longitud_latitud_final']
     fecha_creacion = request.json['fecha_creacion']
     duracion = request.json['duracion']
     nrutas = rutas.query.get(id)
@@ -45,8 +45,8 @@ def updaterutas():
     nrutas.usuario = usuario
     nrutas.nombre_ruta = nombre_ruta
     nrutas.descripcion_ruta = descripcion_ruta
-    nrutas.longitud_ruta = longitud_ruta
-    nrutas.latitud_ruta = latitud_ruta
+    nrutas.longitud_latitud_inicial = longitud_latitud_inicial
+    nrutas.longitud_latitud_final = longitud_latitud_final
     nrutas.fecha_creacion = fecha_creacion
     nrutas.duracion = duracion
     db.session.commit()
