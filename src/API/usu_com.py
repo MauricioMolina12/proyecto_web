@@ -8,7 +8,7 @@ usu_com_schema = usu_comSchema()
 usu_comu_schema = usu_comSchema(many=True)
 
 @ruta_usu_com.route("/usu_com", methods=["GET"])
-def usu_com():
+def usu_comun():
     resultall = usu_com.query.all()
     result = usu_comu_schema.dump(resultall)
     return jsonify(result)
@@ -24,15 +24,18 @@ def saveusu_com():
 
 @ruta_usu_com.route("/updateusu_com", methods=["PUT"])
 def updateusu_com():
+    id = request.json['id']
     comunidad = request.json['comunidad']
     usuario = request.json['usuario']
     nusu_com = usu_com.query.get(id) 
+    nusu_com.comunidad = comunidad
+    nusu_com.usuario = usuario
     db.session.commit()
     return "Datos Actualizado con exitos"
 
 @ruta_usu_com.route("/deleteusu_com/<id>", methods=["GET"])
 def deleteusu_com(id):
-    usu_com = usu_com.query.get(id)
-    db.session.delete(usu_com)
+    usu_comdad = usu_com.query.get(id)
+    db.session.delete(usu_comdad)
     db.session.commit()
-    return jsonify(usu_comu_schema.dump(usu_com))
+    return jsonify(usu_comu_schema.dump(usu_comdad))

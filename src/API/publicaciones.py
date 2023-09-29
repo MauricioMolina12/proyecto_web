@@ -18,23 +18,27 @@ def savepublicacion():
     comunidad = request.json['comunidad']
     usuario = request.json['usuario']
     mensaje = request.json['mensaje']
-    new_publication = publicacion(comunidad,usuario,mensaje)
+    new_publication = publicaciones(comunidad,usuario,mensaje)
     db.session.add(new_publication)
     db.session.commit()
     return "Datos guardados con exitos"
 
 @ruta_publicaciones.route("/updatepublicacion", methods=["PUT"])
 def updatepublicacion():
+    id = request.json['id']
     comunidad = request.json['comunidad']
     usuario = request.json['usuario']
     mensaje = request.json['mensaje']
-    npublication = publicacion.query.get(id) 
+    npublication = publicaciones.query.get(id) 
+    npublication.comunidad = comunidad
+    npublication.usuario = usuario
+    npublication.mensaje = mensaje
     db.session.commit()
     return "Datos Actualizado con exitos"
 
 @ruta_publicaciones.route("/deletepublicacion/<id>", methods=["GET"])
 def deletepublication(id):
-    publication = publicacion.query.get(id)
+    publication = publicaciones.query.get(id)
     db.session.delete(publication)
     db.session.commit()
-    return jsonify(publicacion_schema.dump(publicacion))
+    return jsonify(publicacion_schema.dump(publication))
