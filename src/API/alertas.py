@@ -8,13 +8,13 @@ alertas_usuario = Blueprint("alertas_usuario",__name__)
 alerta_schema = AlertasSchema()   
 alertas_schema = AlertasSchema(many=True)
 
-@alerta_usuario.route("/alertas", methods=["GET"])
-def alertas():
+@alertas_usuario.route("/alertas", methods=["GET"])
+def alerta():
     resultall = alertas.query.all()
     result = alertas_schema.dump(resultall)
     return jsonify(result)
 
-@alerta_usuario.route("/savealerta", methods=["POST"])
+@alertas_usuario.route("/savealerta", methods=["POST"])
 def savealerta():
     idusuario = request.json['idusuario']
     idciclovia = request.json['idciclovia']
@@ -23,12 +23,12 @@ def savealerta():
     latitud_alerta = request.json['latitud_alerta']
     longitud_alerta = request.json['longitud_alerta']
     fecha_hora = request.json['fecha_hora']
-    new_alerta = alertas(idusuario,idusuario,tipo_alerta,descripcion,latitud_alerta,longitud_alerta,fecha_hora)
+    new_alerta = alertas(idusuario,idciclovia,tipo_alerta,descripcion,latitud_alerta,longitud_alerta,fecha_hora)
     db.session.add(new_alerta)
     db.session.commit() 
     return "Datos guardados con exitos"
 
-@alerta_usuario.route("/updatealerta", methods=["PUT"])
+@alertas_usuario.route("/updatealerta", methods=["PUT"])
 def updatealerta():
     id = request.json['id']
     idusuario = request.json['idusuario']
@@ -49,7 +49,7 @@ def updatealerta():
     db.session.commit()
     return "Datos Actualizado con exitos"
 
-@alerta_usuario.route("/deletealerta/<id>", methods=["GET"])
+@alertas_usuario.route("/deletealerta/<id>", methods=["GET"])
 def deletealerta(id):
     aler = alertas.query.get(id)
     db.session.delete(aler)

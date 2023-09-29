@@ -4,7 +4,7 @@ class ciclovias(db.Model):
     __tablename__ = "ciclovias"
 
     id = db.Column(db.Integer, primary_key = True)
-    idpunto_e = db.Column(db.Integer, db.ForeignKey('punto_e.id'))
+    idpunto_e = db.Column(db.Integer, db.ForeignKey('puntos_e.id_puntosE'))
     nombre = db.Column(db.String(50))
     descripcion = db.Column(db.String(50))
     longitud_latitud_inicial = db.Column(db.String(50))
