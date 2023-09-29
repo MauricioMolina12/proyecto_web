@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify, request,json
 from config.bd import db, app, ma
 from models.ciclovias import ciclovias, CicloviasSchema
 
-ruta_usuario = Blueprint("ciclovia_usuario",__name__)
+ciclovias_usuario = Blueprint("ciclovia_usuario",__name__)
 #routes_cliente = Blueprint("routes_cliente", __name__)
 
 ciclovia_schema = CicloviasSchema()   
