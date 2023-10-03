@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
-    <link rel="stylesheet" href="Styles/styleLogin.css">
+<title>Sign up</title>
+    <link rel="stylesheet" href="/src/static/Styles/styleRegister.css">
+    
 </head>
 <body>
     <div class="contain">
@@ -12,26 +13,27 @@
         <div class="chart">
             <div class="form">
                 <div class="input"><input type="text" placeholder="Usuario" name="user"></div>
+                <div class="input"><input type="password" placeholder="Email" name="email"></div>
                 <div class="input"><input type="password" placeholder="Contraseña" name="password"></div>
+                <div class="input"><input type="password" placeholder="Confirmar contraseña" name="Cpassword"></div>
             </div>
             <div class="button">
-                <button class="btn">Iniciar Sesión</button>
+                <button class="btn">Registrarse</button>
             </div>
-            <span class="forgot">¿Olvidaste tu contraseña?</span>
         </div>
         <div class="new">
             <div class="line"></div>
-            <div class="down"><span>¿Eres nuevo?</span></div>
+            <div class="down"><span>¿Tienes cuenta?</span></div>
             <div class="line"></div>
         </div>
         
 
         <div class="account">
-            <button id="RegisterGO">Crear cuenta</button>
+            <button id="loginGO">Iniciar sesión</button>
         </div>
     </div>
 
-    <script src="/src/config/static/GOLogin.js""></script>
-    
+    <script src="/src/static/JS/script.js""></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>

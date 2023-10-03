@@ -25,7 +25,7 @@ app.register_blueprint(rut_cic_usuario, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return render_template('Login.html')
+    return render_template ("templates/homePage.html")
 
 @app.route("/login")
 def login():
