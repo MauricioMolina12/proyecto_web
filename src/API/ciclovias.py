@@ -8,13 +8,13 @@ ciclovias_usuario = Blueprint("ciclovia_usuario",__name__)
 ciclovia_schema = CicloviasSchema()   
 ciclovias_schema = CicloviasSchema(many=True)
 
-@ciclovia_usuario.route("/ciclovias", methods=["GET"])
+@ciclovias_usuario.route("/ciclovias", methods=["GET"])
 def ciclovia():
     resultall = ciclovias.query.all()
     result = ciclovias_schema.dump(resultall)
     return jsonify(result)
 
-@ciclovia_usuario.route("/saveciclovias", methods=["POST"])
+@ciclovias_usuario.route("/saveciclovias", methods=["POST"])
 def saveciclovias():
     idpunto_e = request.json['idpunto_e']
     nombre = request.json['nombre']
@@ -26,7 +26,7 @@ def saveciclovias():
     db.session.commit() 
     return "Datos guardados con exitos"
 
-@ciclovia_usuario.route("/updateciclovia", methods=["PUT"])
+@ciclovias_usuario.route("/updateciclovia", methods=["PUT"])
 def updateciclovia():
     id = request.json['id']
     idpunto_e = request.json['idpunto_e']
@@ -43,7 +43,7 @@ def updateciclovia():
     db.session.commit()
     return "Datos Actualizado con exitos"
 
-@ciclovia_usuario.route("/deleteciclovia/<id>", methods=["GET"])
+@ciclovias_usuario.route("/deleteciclovia/<id>", methods=["GET"])
 def deleteciclovia(id):
     ciclo = ciclovias.query.get(id)
     db.session.delete(ciclo)
