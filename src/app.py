@@ -25,7 +25,16 @@ app.register_blueprint(rut_cic_usuario, url_prefix="/api")
 
 @app.route("/")
 def index():
-    return "Hello world"
+    return render_template('Login.html')
+
+@app.route("/login")
+def login():
+    return render_template("Login.html")
+
+@app.route("/register")
+def register():
+    return render_template("Register.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
