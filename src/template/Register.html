@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign up</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="/src/static/Styles/styleRegister.css">
     
 </head>
@@ -12,10 +12,22 @@
         <h1>RutaSegura</h1>
         <div class="chart">
             <div class="form">
-                <div class="input"><input type="text" placeholder="Usuario" name="user"></div>
-                <div class="input"><input type="password" placeholder="Email" name="email"></div>
-                <div class="input"><input type="password" placeholder="Contraseña" name="password"></div>
-                <div class="input"><input type="password" placeholder="Confirmar contraseña" name="Cpassword"></div>
+                <div class="input">
+                    <input id="userInput" type="text" placeholder="Usuario" name="user">
+                    <label for="userInput">Usuario</label>
+                </div>
+                <div class="input">
+                    <input id="emailInput" type="password" placeholder="Email" name="email">
+                    <label for="emailInput">Email</label>
+                </div>
+                <div class="input">
+                    <input id="passwordInput" type="password" placeholder="Contraseña" name="password">
+                    <label for="passwordInput">Contraseña</label>
+                </div>
+                <div class="input">
+                    <input id="confirmar" type="password" placeholder="Confirmar contraseña" name="Cpassword">
+                    <label for="confirmar">Confirmar contraseña</label>
+                </div>
             </div>
             <div class="button">
                 <button class="btn">Registrarse</button>
@@ -33,7 +45,7 @@
         </div>
     </div>
 
-    <script src="/src/static/JS/script.js""></script>
+    <script src=".././static/JS/script.js""></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>

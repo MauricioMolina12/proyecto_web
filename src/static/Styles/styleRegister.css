@@ -22,9 +22,9 @@ h1 {
 }
 
 .chart {
-    border: thin solid #5DB7DE;
+    border: thin solid #C4BABA;
     border-radius: 8px;
-    min-height: 350px;
+    min-height: 338px;
     display: grid;
     align-content: space-around;
     width: 23rem;
@@ -46,19 +46,43 @@ h1 {
     align-content: space-evenly;
 }
 
+label {
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    color: #C4BABA;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
 .form input {
-    border: none;
+    border: 1px solid #C4BABA;
+    padding: 12px;
     background-color: transparent;
-    border-bottom: 1px solid #C4BABA;
-    width: 240px;
+    width: 250px;
     font-size: 16px;
+    border-radius: 8px;
     font-family: 'Inter', Regular;
 }
 
-.form input::placeholder {
-    color: #BDA9A2;
+
+input::placeholder {
+    opacity: 0;
 }
 
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    top: 2px;
+    left: 5px;
+    background: white;
+    padding: 1px 5px;
+    font-size: 12px;
+    color: #C4BABA;
+}
+
+.input{
+    position: relative;
+}
 
 input:first-of-type {
     margin-top: 10px;
@@ -93,6 +117,11 @@ input:first-of-type {
     align-items: center;
     color: #5DB7DE;
 
+}
+
+.new{
+    position: relative;
+    bottom: 10px;
 }
 
 .new .line {
@@ -154,6 +183,7 @@ input:first-of-type {
         width: 13rem;
         height: 2.5rem;
     }
+    
 
     .new .down {
         display: block;

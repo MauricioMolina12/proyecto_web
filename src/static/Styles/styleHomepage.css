@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@500&family=Righteous&family=Roboto+Mono:wght@300&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.header-container {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #3C3C3A, #3d3e3c);
+
+
+}
+
+.header {
+    width: 90%;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav .list {
+    display: flex;
+    list-style: none;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+
+}
+
+.nav .list li {
+    padding: 0 20px;
+    font-size: 20px;
+    font-family: 'Inter';
+}
+
+.nav .list li:hover:not(.div, .btn) {
+    transform: translateX(-10px);
+    transition: all .3s ease;
+    transition: .5s;
+}
+
+
+.nav .list li::before:not(.div) {
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    width: 100%;
+    bottom: 0;
+    transition: all .8s ease;
+    height: 2px;
+}
+
+.nav .list a:hover {
+    color: #fff;
+    transform: translateX(-.4rem);
+
+}
+
+.nav .list a:hover::before {
+    background-color: white;
+    transform: scaleX(1);
+}
+
+.nav .list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav .list .div {
+    color: white;
+}
+
+.btn {
+    padding: 0 10px;
+    margin-left: 28px;
+    width: 95px;
+    border-radius: 6px;
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Inter';
+    cursor: pointer;
+    color: white;
+}
+
+.btn:first-of-type {
+    background-color: #5DB7DE;
+    border: none;
+}
+
+.btn:last-of-type {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+h1 {
+    font-size: 45px;
+    font-family: 'Righteous';
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.banner {
+    background: linear-gradient(to right, #3C3C3A, #3d3e3c);
+    height: 500px;
+    display: flex;
+}
+
+.banner .items {
+    width: 50%;
+}
+
+.banner .items:first-of-type img {
+    width: 740px;
+    height: 620px;
+    overflow: hidden;
+}
+
+.banner .items:last-child {
+    color: white;
+    font-family: 'Righteous', Regular;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: -40px;
+}
+
+.banner .items:nth-child(2) {
+    width: fit-content;
+    display: flex;
+    align-items: end;
+}
+
+.banner .items:nth-child(2) button {
+    width: 120px;
+    height: 37px;
+    position: relative;
+    bottom: 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-family: 'Arimo';
+    color: white;
+    font-size: 19.5px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+
+.banner .items:nth-child(2) button:hover {
+    background-color: white;
+    color: #3C3C3A;
+}
+
+
+
+.inf {
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    display: flex;
+
+}
+
+.inf .items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-family: 'Righteous';
+    color: #5DB7DE;
+    font-size: 40px;
+}
+
+
+.inf .items:last-child img {
+    width: 500px;
+    height: 300px;
+}
+
+aside {
+    background-color: #313232;
+    width: 100%;
+    height: 500px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 44px;
+}
+
+.aside-on {
+    max-width: 990px;
+}
+
+footer {
+    background-color: #5DB7DE;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Righteous';
+    color: white;
+    font-size: 50px;
+}
