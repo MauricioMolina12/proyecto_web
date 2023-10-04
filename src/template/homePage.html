@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
-    <link rel="stylesheet" href="../static/Styles/styleHome.css">
+    <!-- <title>{% block title %} RutaSegura{%endblock %}</title> -->
+    <title>RutaSegura</title>
+    <link rel="icon" href="../static/Multimedia/ICON/5778454.png" type="image/x-icon">
+    <link rel="stylesheet" href=".././static/Styles/styleHomepage.css">
 </head>
 <body>
+    <!-- {% block content %} -->
+        <div class="header-container">
+            <header class="header">
+                <a href="homePage.html"><h1>RutaSegura</h1></a>
+                <nav class="nav">
+                    <ul class="list">
+                        <li class="items"><a href="#">Inicio</a></li>
+                        <li class="items"><a href="alertas.html">Alertas</a></li>
+                        <li class="items"><a href="comunidad.html">Comunidad</a></li>
+                        <li class="items div"><div>|</div></li>
+                        <button id="sigup" class="items btn">Sign Up</button>
+                        <button id="signin" class="items btn">Sign In</button>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="banner">
+            <div class="items">
+                <img src="../static/Multimedia/roadmachine_01_one_gry_blk_wht_1.png" alt="">
+            </div>
+
+            <div class="items">
+                <button>Pedalear</button>
+            </div>
+            <div class="items">
+                <h2>EXPLORA, <br> CONECTA, <br> <span style="color: #5DB7DE;">PEDALEA!</span></h2>
+            </div>
+        </div>
     
+        <div class="inf">
+            <div class="items"><h2>Explora rutas <br> seguras</h2></div>
+            <div class="items">
+                <img src="../static/Multimedia/cycling-(1)_1626267160641.png" alt="">
+            </div>
+        </div>
+
+        <aside>
+            <div class="aside-on">
+                <p><span style="font-weight: 800;color: #5DB7DE;" >RutaSegura </span>es tu compañero confiable para explorar el mundo en bicicleta.
+                    Nuestra plataforma te brinda rutas seguras y emocionantes diseñadas 
+                    exclusivamente para ciclistas.</p>
+            </div>
+        </aside>
+    
+    <footer>
+        <p>RutaSegura</p>
+    </footer>
+    <!-- {% endblock %} -->
+
+    <script src="../static/JS/homePage.js"></script>
 </body>
 </html>
