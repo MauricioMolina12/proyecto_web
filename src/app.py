@@ -22,18 +22,20 @@ app.register_blueprint(ciclovias_usuario, url_prefix="/api")
 app.register_blueprint(alertas_usuario, url_prefix="/api")
 app.register_blueprint(rut_cic_usuario, url_prefix="/api")
 
+
 def create_app():
     app = Flask(__name__, template_folder='templates')
     
     @app.route("/")
     def index():
         return render_template ('homePage.html')
+        
 
-    @app.route("/login")
+    @app.route("/login", methods=["POST"])
     def login():
         return render_template('Login.html')
 
-    @app.route("/register")
+    @app.route("/register", methods=["POST"])
     def register():
         return render_template('Register.html')
 
