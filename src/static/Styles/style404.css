@@ -22,7 +22,11 @@ body {
 }
 
 .on img {
+<<<<<<< HEAD
     width: 710px;
+=======
+    width: 550px;
+>>>>>>> 929808f (adding template 404)
     height: 450px;
 }
 
@@ -33,7 +37,11 @@ body {
     top: 3px;
 }
 
+<<<<<<< HEAD
 .buttonBack a{
+=======
+.buttonBack button{
+>>>>>>> 929808f (adding template 404)
     height: 40px;
     cursor: pointer;
     display: flex;
