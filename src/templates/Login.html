@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
-    <link rel="stylesheet" href=".././static/Styles/styleLogin.css">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='Styles/styleLogin.css') }}"
+    />
 </head>
 <body>
     <div class="contain">
@@ -38,7 +41,7 @@
         </div>
     </div>
 
-    <script src=".././static/JS/login.js"></script>
+    <script src="{{ url_for('static', filename='JS/login.js')}}"></script>
     
 </body>
 </html>
