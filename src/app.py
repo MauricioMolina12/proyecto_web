@@ -37,6 +37,10 @@ def login():
 def register():
     return render_template('Register.html')
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
 
 if __name__ == "__main__":
     app.run(debug=True)
