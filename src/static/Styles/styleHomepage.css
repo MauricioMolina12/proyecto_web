@@ -115,7 +115,7 @@ body {
     border: none;
 }
 
-.btn:first-of-type:hover{
+.btn:first-of-type:hover {
     background-color: #fff;
     color: #5DB7DE;
 }
@@ -126,18 +126,19 @@ body {
     border: 1px solid white;
 }
 
-.btn:last-of-type:hover{
+.btn:last-of-type:hover {
     background-color: #5DB7DE;
     color: white;
     border: none;
 }
+
 h1 {
     font-size: 45px;
     font-family: 'Righteous';
     color: white;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -246,4 +247,133 @@ footer {
     font-family: 'Righteous';
     color: white;
     font-size: 50px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav .list {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+    }
+    
+    .mobile-menu.show {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .menu-container {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu-container.show {
+        display: block;
+    }
+    
+    .mobile-menu {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mobile-menu li {
+        margin-bottom: 10px;
+    }
+    
+    .mobile-menu li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .mobile-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+    
+
+
+    .banner {
+        width: 100%;
+        position: relative;
+    }
+
+    .banner .items h2 {
+        font-size: 30px;
+        position: relative;
+        right: 50px;
+    }
+
+    .banner .items:first-of-type img {
+        width: 530px;
+        height: 430px;
+        position: absolute;
+        bottom: 0;
+        right: 70px;
+    }
+
+    .inf {
+        width: 100%;
+    }
+
+    .inf .items:first-child h2{
+        font-size: 30px;
+    }
+
+    .inf .items:last-child img{
+        width: 220px;
+        height: 150px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    aside p{
+        font-size: 25px;
+    }
+
+    aside .aside-on{
+        max-width: 300px;
+    }
+
+    footer{
+        font-size: 30px;
+    }
+
 }

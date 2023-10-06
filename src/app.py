@@ -22,22 +22,21 @@ app.register_blueprint(ciclovias_usuario, url_prefix="/api")
 app.register_blueprint(alertas_usuario, url_prefix="/api")
 app.register_blueprint(rut_cic_usuario, url_prefix="/api")
 
-def create_app():
-    app = Flask(__name__, template_folder='templates')
+
+app = Flask(__name__)
     
-    @app.route("/")
-    def index():
-        return render_template ('homePage.html')
+@app.route("/")
+def index():
+    return render_template('homepage.html')
 
-    @app.route("/login")
-    def login():
-        return render_template('Login.html')
+@app.route("/login")
+def login():
+    return render_template('Login.html')
 
-    @app.route("/register")
-    def register():
-        return render_template('Register.html')
+@app.route("/register")
+def register():
+    return render_template('Register.html')
 
-    return app
 
 if __name__ == "__main__":
     app.run(debug=True)
