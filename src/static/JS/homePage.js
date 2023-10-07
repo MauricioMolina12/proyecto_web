@@ -1,9 +1,9 @@
 document.getElementById("sigup").addEventListener("click", function() {
-    window.location.href = "Register.html";
+    window.location.href = "/register";
 });
 
 document.getElementById("signin").addEventListener("click", function() {
-    window.location.href = "";
+    window.location.href = "/login";
 });
 
 
