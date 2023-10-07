@@ -37,9 +37,14 @@ def login():
 def register():
     return render_template('Register.html')
 
+
 @app.errorhandler(404)
 def not_found_error(error):
     return render_template('404.html'), 404
+
+@app.route("/map")
+def maps():
+    return render_template('maps.html')
 
 
 if __name__ == "__main__":

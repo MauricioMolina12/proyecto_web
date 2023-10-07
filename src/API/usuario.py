@@ -3,7 +3,6 @@ from config.bd import db, app, ma
 from models.usuario import usuario, UsuarioSchema
 
 ruta_usuario = Blueprint("ruta_usuario",__name__)
-#routes_cliente = Blueprint("routes_cliente", __name__)
 
 usuario_schema = UsuarioSchema()   
 usuarios_schema = UsuarioSchema(many=True)
@@ -21,7 +20,7 @@ def saveusuario():
     contraseña = request.json['contraseña']
     new_user = usuario(nombre,correo,contraseña)
     db.session.add(new_user)
-    db.session.commit() 
+    db.session.commit()     
     return "Datos guardados con exitos"
 
 @ruta_usuario.route("/updateusuario", methods=["PUT"])
