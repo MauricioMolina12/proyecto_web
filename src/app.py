@@ -41,11 +41,6 @@ def register():
 def not_found_error(error):
     return render_template('404.html'), 404
 
-
-@app.errorhandler(404)
-def not_found_error(error):
-    return render_template('404.html'), 404
-
 @app.route("/map")
 def maps():
     return render_template('maps.html')
