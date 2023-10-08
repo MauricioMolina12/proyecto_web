@@ -1,3 +1,27 @@
-{% extends './homepage.html' %}
-{% block body %}{% endblock %}
+{% extends './layout.html' %}
+{% block title %}RutaSegura{% endblock %}
+{% block body %}
+        <div class="header-container">
+            <header class="header">
+                <a href="/"><h1>RutaSegura</h1></a>
+                <nav class="nav">
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                      </div>
+                    <ul class="list mobile-menu">
+                        <li class="items"><a href="/">Inicio</a></li>
+                        <li id="route"class="items"><a href="">Rutas</a></li>
+                        <li class="items"><a href="/comunidad">Comunidad</a></li>
+                        <li class="items div"><div>|</div></li>
+                        <button id="signup" class="items btn">Sign Up</button>
+                        <button id="signin" class="items btn">Sign In</button>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div id="map"></div>
+{% endblock %}
+
 

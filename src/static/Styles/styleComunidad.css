@@ -1,6 +1,67 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@500&family=Righteous&family=Roboto+Mono:wght@300&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+h1 {
+    color: #5DB7DE;
+    font-size: 'Righteous';
+}
+
+.container-comunidad {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+.on-comunidad {
+    min-width: 94%;
+    display: flex;
+    position: relative;
+    top: 10px;
+}
+
+.on-comunidad h1 {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 30px;
+}
+
+.on-comunidad .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.on-comunidad .btn-container button {
+    border-radius: 3px;
+    width: 110px;
+    font-size: 11px;
+    color: white;
+    height: 35px;
+    border: none;
+    background-color: #5DB7DE;
+    padding: 0 10px;
+    cursor: pointer;
+    font-family: 'Arimo';
+}
+
+.on-comunidad .btn-container button:hover{
+    background-color: #48a1c6;
+}
+
+hr{
+    width: 95%;
+    position: relative;
+    top: 25px;
+    background-color: #3C3C3A;
+}
+
+
 

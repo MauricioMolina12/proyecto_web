@@ -1,11 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends './layout.html' %}
+{% block title %}RutaSegura{% endblock %}
+{% block body %}
+        <div class="header-container">
+            <header class="header">
+                <a href="/"><h1>RutaSegura</h1></a>
+                <nav class="nav">
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                      </div>
+                    <ul class="list mobile-menu">
+                        <li class="items"><a href="/">Inicio</a></li>
+                        <li id="routecom"class="items"><a href="/map">Rutas</a></li>
+                        <li class="items"><a href="">Comunidad</a></li>
+                        <li class="items div"><div>|</div></li>
+                        <button id="signup" class="items btn">Sign Up</button>
+                        <button id="signin" class="items btn">Sign In</button>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="container-comunidad">
+            <div class="on-comunidad">
+                <h1>Comunidad</h1>
+                <div class="btn-container">
+                    <button class="new-coments">Nuevo comentario</button>
+                </div>
+            </div>
+            <hr>
+            <div class="coments">
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+                <div class="items"></div>
+            </div>
+        </div>
+{% endblock %}
