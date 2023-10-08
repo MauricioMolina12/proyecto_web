@@ -1,5 +1,5 @@
 document.getElementById("RegisterGO").addEventListener("click", function() {
-    window.location.href = "Register.html";
+    window.location.href = "/register";
 });
 
  const usuarioInput = document.querySelector('input[name="user"]');
