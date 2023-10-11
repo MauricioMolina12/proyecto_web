@@ -1,0 +1,73 @@
+#map {
+    height: 500px;
+    width: 100%;
+    z-index: -1;
+}
+
+/* styles.css */
+
+.popup-container {
+    background-color: #3D3E3C;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.popup-title {
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    margin-bottom: 20px;
+}
+
+.popup-button {
+    background-color: #5DB7DE;
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #5DB7DE;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    transition: 1s;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+#route:hover .dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+}
+
+#route .dropdown a {
+    width: 100%;
+    padding: 2px 0;
+}
+
+#route .dropdown a:last-child {
+    border-top: 1px solid #a19d9d;
+}
+
+#route .dropdown a:hover {
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+}
