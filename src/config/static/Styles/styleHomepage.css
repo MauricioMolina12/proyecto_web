@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: center;
     background: linear-gradient(to right, #3C3C3A, #3d3e3c);
+    z-index: 50;
 
 
 }
