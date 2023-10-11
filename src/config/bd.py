@@ -12,3 +12,5 @@ app.secret_key = "project"
 db = SQLAlchemy(app)
 
 ma = Marshmallow(app)
+
+

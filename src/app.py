@@ -23,7 +23,6 @@ app.register_blueprint(alertas_usuario, url_prefix="/api")
 app.register_blueprint(rut_cic_usuario, url_prefix="/api")
 
 
-app = Flask(__name__)
     
 @app.route("/")
 def index():
@@ -39,7 +38,17 @@ def register():
 
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('404.html'), 404
+    return render_template('404.html'),404
+
+
+@app.route("/map")
+def maps():
+    return render_template('maps.html')
+
+
+@app.route("/comunidad")
+def comunidad():
+    return render_template('comunidad.html')
 
 
 if __name__ == "__main__":

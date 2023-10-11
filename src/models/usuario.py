@@ -4,7 +4,6 @@ class usuario(db.Model):
     __tablename__ = "usuarios"
 
     id = db.Column(db.Integer, primary_key = True)
-    #idcliente = db.Column(db.Integer, db.ForeignKey('tblCliente.id'))
     nombre = db.Column(db.String(50))
     correo = db.Column(db.String(50))
     contraseña = db.Column(db.String(50))

@@ -6,12 +6,16 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="../static/Multimedia/ICON/5778454.png" type="image/x-icon">
     <link rel="stylesheet" href=".././static/Styles/styleHomepage.css">
+    <link rel="stylesheet" href=".././static/Styles/styleMap.css">
     <link rel="stylesheet" href=".././static/Styles/style404.css">
+    <link rel="stylesheet" href=".././static/Styles/styleComunidad.css">
 </head>
 <body>
-    {% block body %}
-    
-    {% endblock %}
+    {% block header %}{% endblock%}
+    {% block body %}{% endblock %}
     <script src="../static/JS/homePage.js"></script>
+    <script src="../static/JS/maps.js"></script>
+    <script src="../static/JS/comunidad.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 </body>
 </html>

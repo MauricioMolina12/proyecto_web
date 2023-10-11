@@ -1,9 +1,9 @@
 {% extends './layout.html' %}
 {% block title %}RutaSegura{% endblock %}
-{% block body %}
+{% block header %}
         <div class="header-container">
             <header class="header">
-                <a href="homepage.html"><h1>RutaSegura</h1></a>
+            <a href="/"><h1>RutaSegura</h1></a>
                 <nav class="nav">
                     <div class="menu-toggle" id="mobile-menu">
                         <span class="bar"></span>
@@ -11,9 +11,9 @@
                         <span class="bar"></span>
                       </div>
                     <ul class="list mobile-menu">
-                        <li class="items"><a href="#">Inicio</a></li>
-                        <li class="items"><a href="alertas.html">Alertas</a></li>
-                        <li class="items"><a href="comunidad.html">Comunidad</a></li>
+                        <li class="items"><a href="/">Inicio</a></li>
+                        <li class="items"><a href="/#aside">¿Quienes somos?</a></li>
+                        <li id="com" class="items"><a href="/comunidad">Comunidad</a></li>
                         <li class="items div"><div>|</div></li>
                         <button id="sigup" class="items btn">Sign Up</button>
                         <button id="signin" class="items btn">Sign In</button>
@@ -21,7 +21,9 @@
                 </nav>
             </header>
         </div>
+{% endblock %}
 
+{% block body %}
         <div class="banner">
             <div class="items">
                 <img src="../static/Multimedia/roadmachine_01_one_gry_blk_wht_1.png" alt="">
@@ -40,7 +42,7 @@
             </div>
         </div>
 
-        <aside>
+        <aside id="aside">
             <div class="aside-on">
                 <p><span style="font-weight: 800;color: #5DB7DE;" >RutaSegura </span>es tu compañero confiable para explorar el mundo en bicicleta.
                     Nuestra plataforma te brinda rutas seguras y emocionantes diseñadas 

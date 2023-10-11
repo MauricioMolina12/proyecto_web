@@ -10,7 +10,7 @@ class ciclovias(db.Model):
     longitud_latitud_inicial = db.Column(db.String(50))
     longitud_latitud_final = db.Column(db.String(50))
 
-    def __init__(self, idpunto_e, nombre, descripcion, longitud_latitud_inicial, longitud_lotitud_final):
+    def __init__(self, idpunto_e, nombre, descripcion, longitud_latitud_inicial, longitud_latitud_final):
         self.idpunto_e = idpunto_e
         self.nombre = nombre
         self.descripcion = descripcion
