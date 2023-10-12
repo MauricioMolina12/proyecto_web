@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request,json
+from flask import Blueprint, jsonify, request,json,redirect,session,render_template
 from config.bd import db, app, ma
 from models.usuario import usuario, UsuarioSchema
 
@@ -6,6 +6,45 @@ ruta_usuario = Blueprint("ruta_usuario",__name__)
 
 usuario_schema = UsuarioSchema()   
 usuarios_schema = UsuarioSchema(many=True)
+
+
+@app.route('/ingresar', methods=['POST'])
+def ingresar():
+    user = request.form['user']
+    password = request.form['password']
+    Usuario = usuario.query.filter_by(nombre=user, contraseña=password).first()
+    if Usuario:
+        session['user'] = Usuario.nombre
+        return render_template('homepage.html', Usuario = session['user'])    
+    else:
+        return "Usuario o contraseña incorrectos"
+
+@app.route('/cerrar')
+def cerrar():
+    session.pop('Usuario',None)
+    return redirect('/')
+
+
+@app.route('/add_user', methods = ['POST'])
+def add_user():
+    if request.method == 'POST':
+        nombre = request.form['user']
+        correo = request.form['email']
+        contraseña = request.form['password']
+        ccontraseña = request.form['Cpassword']
+        Usuario = usuario.query.filter_by(nombre=nombre).first()
+        if Usuario is None and contraseña==ccontraseña: 
+            new_user = usuario(nombre, correo,contraseña)
+            db.session.add(new_user)
+            db.session.commit()  
+            return 'received'
+        else:
+            return redirect ('/register')
+
+
+
+
+
 
 @ruta_usuario.route("/usuarios", methods=["GET"])
 def usuarios():

@@ -24,18 +24,19 @@ registroBtn.addEventListener('click', () => {
         alert('Las contraseñas no coinciden.');
         return;
     }
+   
 
-    axios.post('http://localhost:5000/api/saveusuario', {
-        nombre: nombre,
-        correo: correo,
-        contraseña: contraseña
-    })
-    .then(function (response) {
-        console.log(response.data);
-    })
-    .catch(function (error) {
-        console.error(error);
-        alert('Error al registrar usuario.');
-    });
+    // axios.post('http://localhost:5000/api/saveusuario', {
+    //     nombre: nombre,
+    //     correo: correo,
+    //     contraseña: contraseña
+    // })
+    // .then(function (response) {
+    //     console.log(response.data);
+    // })
+    // .catch(function (error) {
+    //     console.error(error);
+    //     alert('Error al registrar usuario.');
+    // });
 });
 
