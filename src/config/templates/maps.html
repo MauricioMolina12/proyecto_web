@@ -14,8 +14,8 @@
                         <li class="items"><a href="/">Inicio</a></li>
                         <li id="route"class="items"><a href="">Rutas
                             <div class="dropdown">
-                                <a href="">Proponer ruta</a>
-                                <a href="">Visualizar rutas</a>
+                                <a href="" id="propuesta">Proponer ruta</a>
+                                <a href="/Vista" id="vista">Visualizar rutas</a>
                             </div>
                         </a></li>
                         <li class="items"><a href="/comunidad">Comunidad</a></li>
@@ -27,6 +27,8 @@
             </header>
         </div>
         <div id="map"></div>
+    <script src="../static/JS/comunidad.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
 {% endblock %}
 
 
