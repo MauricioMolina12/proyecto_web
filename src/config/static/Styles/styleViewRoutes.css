@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@500&family=Righteous&family=Roboto+Mono:wght@300&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container-view{
+    border: 1px solid black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-view h2{
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+.routes-view-container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    justify-items: center;
+    row-gap: 30px;
+}
+
+.routes-view{
+    border: none;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    width: 320px;
+    height: 230px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-view h2{
+    font-size: 40px;
+    font-family: 'Righteous';
+    font-weight: normal;
+    color: #5DB7DE;
+}
+
+.routes-view h3{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Arimo';
+}
+
+.routes-view p{
+    font-size: 18px;
+    line-height: 40px;
+}

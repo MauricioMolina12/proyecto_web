@@ -1,0 +1,56 @@
+{% extends './maps.html' %}
+{% block body %}
+<div class="header-container">
+    <header class="header">
+        <a href="/"><h1>RutaSegura</h1></a>
+        <nav class="nav">
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+            <ul class="list mobile-menu">
+                <li class="items"><a href="/">Inicio</a></li>
+                <li id="route"class="items"><a href="">Rutas
+                    <div class="dropdown">
+                        <a href="" id="propuesta">Proponer ruta</a>
+                        <a href="/Vista" id="vista">Visualizar rutas</a>
+                    </div>
+                </a></li>
+                <li class="items"><a href="/comunidad">Comunidad</a></li>
+                <li class="items div"><div>|</div></li>
+                <button id="signup" class="items btn">Sign Up</button>
+                <button id="signin" class="items btn">Sign In</button>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<div class="container-view">
+    <h2>Rutas propuestas</h2>
+    <hr>
+    <div class="routes-view-container">
+        <div class="routes-view">
+            <h3 id="user">Mauro_M</h3>
+            <p id="name-route">Portal-Viva</p>
+            <p id="description-route">Es un poco transitada</p>
+            <p id="coordenadas-route">Portal(cra50)-Viva(cra 90)</p>
+            <p id="date-route">11/10/2023</p>
+
+        </div>
+        <div class="routes-view">
+
+        </div>
+        <div class="routes-view">
+
+        </div>
+        <div class="routes-view">
+
+        </div>
+        <div class="routes-view">
+
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,5 +1,5 @@
 from flask import Flask, redirect, request, jsonify, json, session, render_template
-from config.bd import app, db
+from config.bd import app, db   
 
 from API.usuario import ruta_usuario
 from API.comunidad import ruta_comunidad
@@ -48,6 +48,10 @@ def maps():
 @app.route("/comunidad")
 def comunidad():
     return render_template('comunidad.html')
+
+@app.route("/Vista")
+def rutas():
+    return render_template('rutas.html')
 
 
 if __name__ == "__main__":

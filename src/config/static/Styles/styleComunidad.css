@@ -6,88 +6,82 @@
     padding: 0;
 }
 
-h1 {
-    color: #5DB7DE;
-    font-size: 'Righteous';
+body {
+    min-height: 100vh;
+}
+
+.comments-view {
+    background-color: white;
 }
 
 .container-comunidad {
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
-    align-items: center;
 }
 
-.on-comunidad {
-    min-width: 94%;
-    display: flex;
+
+h2 {
+    color: #5DB7DE;
+    font-family: 'Righteous';
+    text-align: center;
     position: relative;
-    top: 10px;
+    top: 15px;
+    font-size: 35px;
+    margin-bottom: 25px;
 }
 
-.on-comunidad h1 {
+hr {
     width: 90%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    left: 30px;
+    margin: auto;
 }
 
-.on-comunidad .btn-container {
+.messages-container {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 90%;
+    margin: auto;
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+.box-message {
+    box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
+    width: 220px;
+    height: 180px;
+    border-radius: 8px;
+}
+
+.input-container {
+    min-height: 20vh;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
 }
 
-.on-comunidad .btn-container button {
-    border-radius: 3px;
-    width: 110px;
-    font-size: 11px;
+.input-container input{
+    width: 70%;
+    height: 3.5rem;
+    border-radius: 10px;
+    border: none;
+    padding: 0 10px;
+    background-color: #b2adad;
+}
+
+
+
+.input-container input::placeholder{
+    font-size: 17px;
     color: white;
-    height: 35px;
+}
+
+.input-container button{
+    height: 2.5rem;
+    width: 12%;
+    cursor: pointer;
     border: none;
     background-color: #5DB7DE;
-    padding: 0 10px;
-    cursor: pointer;
-    font-family: 'Arimo';
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
 }
-
-.on-comunidad .btn-container button:hover{
-    background-color: #48a1c6;
-}
-
-hr{
-    width: 95%;
-    position: relative;
-    top: 25px;
-    background-color: #3C3C3A;
-}
-
-.coments{
-    position: relative;
-    top: 70px;
-    width: 90%;
-    height: 400px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
-    grid-template-rows: repeat(5,1fr);
-    gap: 20px;
-}
-
-.coments .items{
-    padding: 15px;
-    width: 100%;
-    height: 200px;
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: offsetX offsetY blurRadius spreadRadius color;
-}
-
-.coments .items h2{
-    font-family: 'Righteous';
-    font-weight: normal;
-}
-
-.coments .items p{
-    font-family: 'Arimo';
-}
-
