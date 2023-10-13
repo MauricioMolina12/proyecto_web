@@ -12,10 +12,30 @@ registroBtn.addEventListener('click', () => {
     const password = document.querySelector('input[name="passwordInput"]');
     const confirmPasswordInput = document.querySelector('input[name="Cpassword"]');
 
-    if (password == confirmPasswordInput):
-        alert('Las contraseñas no coinciden')
-};
-  
+    if (!nombre || !correo || !contraseña || !confirmarContraseña) {
+        alert('No ha completado la información en los campos.');
+        return;
+    }
+
+    if (contraseña !== confirmarContraseña) {
+        alert('Las contraseñas no coinciden.');
+        return;
+    }
+   
+
+    // axios.post('http://localhost:5000/api/saveusuario', {
+    //     nombre: nombre,
+    //     correo: correo,
+    //     contraseña: contraseña
+    // })
+    // .then(function (response) {
+    //     console.log(response.data);
+    // })
+    // .catch(function (error) {
+    //     console.error(error);
+    //     alert('Error al registrar usuario.');
+    // });
+});
 
 function postUser(username, email, password) {
     let options = {

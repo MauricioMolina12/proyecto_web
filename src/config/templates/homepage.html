@@ -15,9 +15,14 @@
                         <li class="items"><a href="/#aside">¿Quienes somos?</a></li>
                         <li id="com" class="items"><a href="/comunidad">Comunidad</a></li>
                         <li class="items div"><div>|</div></li>
-                        <span id="nameUser">Mauro</span>
+
+                        {% if Usuario %}
+                            <li class="items"><p id="name_user"> {{Usuario}}</p></li>
+                            <li class="items close" id="btn-close"><a href="/cerrar">Salir</a></li>
+                        {% else %}
                         <button id="sigup" class="items btn">Sign Up</button>
                         <button id="signin" class="items btn">Sign In</button>
+                        {% endif %}
                     </ul>
                 </nav>
             </header>
@@ -31,13 +36,13 @@
             </div>
 
             <div class="items">
-                <h2>EXPLORA, <br> CONECTA, <br> <span style="color: #5DB7DE;">PEDALEA!</span></h2>
+                <h2 style="color:white">EXPLORA, <br> CONECTA, <br> <span style="color: #5DB7DE;">PEDALEA!</span></h2>
                 <button id="ruta">Enrutarse</button>
             </div>
         </div>
     
         <div class="inf">
-            <div class="items"><h2>Explora rutas <br> seguras</h2></div>
+            <div class="items"><h2 style="font-size:60px">Explora rutas <br> seguras</h2></div>
             <div class="items">
                 <img src="../static/Multimedia/cycling-(1)_1626267160641.png" alt="">
             </div>

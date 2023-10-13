@@ -217,6 +217,10 @@ a {
     font-size: 40px;
 }
 
+.banner .items:nth-child(2) h2{
+    font-size: 45px;
+}
+
 
 .inf .items:last-child img {
     width: 500px;
@@ -262,6 +266,33 @@ footer {
     background-color: white;
     margin: 3px 0;
     transition: 0.4s;
+}
+
+
+
+#btn-close {
+    padding: 0 10px;
+    margin-left: 28px;
+    width: 95px;
+    border-radius: 6px;
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Inter';
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-close:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+#name_user{
+    color: white;
 }
 
 
@@ -380,5 +411,3 @@ footer {
         font-size: 30px;
     }
 }
-
-

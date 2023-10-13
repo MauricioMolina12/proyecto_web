@@ -11,7 +11,7 @@
     <div class="contain">
         <h1>RutaSegura</h1>
         <div class="chart">
-            <form action="/saveusuario"method="POST">
+            <form action="/add_user" method="POST">
                 <div class="form">
                     <div class="input">
                         <input id="userInput" type="text" placeholder="Usuario" name="user">
@@ -22,7 +22,7 @@
                         <label for="emailInput">Email</label>
                     </div>
                     <div class="input">
-                        <input id="passwordInput" type="password" placeholder="Contraseña" name="passwordInput">
+                        <input id="passwordInput" type="password" placeholder="Contraseña" name="password">
                         <label for="passwordInput">Contraseña</label>
                     </div>
                     <div class="input">
@@ -30,12 +30,10 @@
                         <label for="confirmar">Confirmar contraseña</label>
                     </div>
                 </div>
-                <div class="button">
-                    <button class="btn" type="submit">Registrarse</button>
+                <div class="button" type="submit">
+                    <button class="btn">Registrarse</button>
                 </div>
-            </form>
-        
-            
+        </form>
         </div>
         <div class="new">
             <div class="line"></div>

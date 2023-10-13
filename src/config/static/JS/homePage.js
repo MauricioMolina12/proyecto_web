@@ -8,11 +8,11 @@ document.getElementById("signin").addEventListener("click", function() {
 
 
 document.getElementById("ruta").addEventListener("click", function(){
-    window.location.href = "/map"
+    window.location.href = "/map";
 });
 
 document.getElementById("com").addEventListener("click", function(){
-    window.location.href = "/comunidad"
+    window.location.href = "/comunidad";
 });
 
 
