@@ -3,6 +3,12 @@ document.getElementById("loginGO").addEventListener("click", function() {
 });
 
 
+const var_usuario= document.getElementById('userInput').value;
+const var_email = document.getElementById('emailInput').value;
+const var_password = document.getElementById('passwordInput').value;
+const var_confirmarP   = document.getElementById('confirmar').value;
+
+
 
 // function saveusuario(){
 //      const var_usuario= document.getElementById('userInput').value;
