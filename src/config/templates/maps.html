@@ -1,6 +1,9 @@
 {% extends './layout.html' %}
 {% block title %}RutaSegura{% endblock %}
-{% block body %}
+{% block header %}
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+        
         <div class="header-container">
             <header class="header">
                 <a href="/"><h1>RutaSegura</h1></a>
@@ -21,7 +24,7 @@
                         <li class="items"><a href="/comunidad">Comunidad</a></li>
                         <li class="items div"><div>|</div></li>
                         {% if Usuario %}
-                            <li class="items"><p id="name_user"> {{Usuario}}</p></li>
+                            <li class="items"><p id="name_user">{{Usuario}}</p></li>
                             <li class="items close" id="btn-close"><a href="/cerrar">Salir</a></li>
                         {% else %}
                         <button id="sigup" class="items btn">Sign Up</button>
@@ -31,9 +34,24 @@
                 </nav>
             </header>
         </div>
-        <div id="map"></div>
-    <script src="../static/JS/comunidad.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+        
 {% endblock %}
 
+{% block body %}
 
+        <div id='map' style='width: 900px; height: 100vh;'></div>
+            <script>
+              mapboxgl.accessToken = 'pk.eyJ1IjoibWF1cm8wOCIsImEiOiJjbG5yb2t6a2gwdGI5Mnpud3llaWczYjRpIn0.Tws5fCUS6WHs_-1ECbnCjA';
+              var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                zoom: 14,
+                center: [-74.787977,10.988829]
+              });
+
+              
+              map.addControl(new mapboxgl.NavigationControl());
+              map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken}),'top-left')
+            </script>
+            
+{% endblock %}

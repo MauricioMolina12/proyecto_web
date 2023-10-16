@@ -4,58 +4,55 @@ document.getElementById("loginGO").addEventListener("click", function() {
 
 
 
-const registroBtn = document.querySelector('.btn');
+// function saveusuario(){
+//      const var_usuario= document.getElementById('userInput').value;
+//      const var_email = document.getElementById('emailInput').value;
+//      const var_password = document.getElementById('passwordInput').value;
+//      const var_confirmarP   = document.getElementById('confirmar').value;
 
-registroBtn.addEventListener('click', () => {
-    const username = document.querySelector('input[name="user"]');
-    const email = document.querySelector('input[name="email"]');
-    const password = document.querySelector('input[name="passwordInput"]');
-    const confirmPasswordInput = document.querySelector('input[name="Cpassword"]');
+//      var config = {
+//          headers: {
+//              'Content-Type': 'application/json'
+//          }
+//      };
+//      var data = {
+//          nombre: var_usuario,
+//          correo: var_email,
+//          contraseña: var_password
+//      };
+//      let usuarioSI = axios.get(`/api/usuarios?nombre=${var_usuario}`)
 
-    if (!nombre || !correo || !contraseña || !confirmarContraseña) {
-        alert('No ha completado la información en los campos.');
-        return;
-    }
+//          .then(response => {
 
-    if (contraseña !== confirmarContraseña) {
-        alert('Las contraseñas no coinciden.');
-        return;
-    }
-   
+//              if (usuarioSI !== null) {
 
-    // axios.post('http://localhost:5000/api/saveusuario', {
-    //     nombre: nombre,
-    //     correo: correo,
-    //     contraseña: contraseña
-    // })
-    // .then(function (response) {
-    //     console.log(response.data);
-    // })
-    // .catch(function (error) {
-    //     console.error(error);
-    //     alert('Error al registrar usuario.');
-    // });
-});
+//                  alertify.alert('Ya existe un usuario así');
 
-function postUser(username, email, password) {
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "User-Agent": "insomnia/8.1.0",
-      },
-      body:
-        '{"username":"' +
-        username +
-        '","email":"' +
-        email +
-        '","password":"' +
-        password +
-        '"}',
-    };
-  
-    fetch("http://localhost:5000/api/saveusuario", options)
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
-  }
+//              }else if(var_password.trim() === var_confirmarP.trim()){
+//                  const ruta= 'api/saveusuario'
+
+//                  axios.post(ruta, JSON.stringify(data), config)
+
+//                      .then(function (response) {
+//                          var_usuario ="",
+//                          var_email ="",
+//                          var_password = "",
+//                          var_confirmarP = ""
+
+//                          alertify.alert('Datos guardados con exito!');
+//                      })
+//                      .catch(error => {
+//                          alertify.alert('Error al guardar usuario',error);
+//                      });
+//                  }else{
+//                      alertify.alert('Las contraseñas no coinciden');
+//                  }
+//              })
+//              .catch(error => {
+//                  console.error('Error al verificar si el usuario existe:', error);
+//              });
+//  }
+
+//  document.getElementById('btn-r').addEventListener("click",saveusuario());
+
+

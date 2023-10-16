@@ -37,9 +37,9 @@ def add_user():
             new_user = usuario(nombre, correo,contraseña)
             db.session.add(new_user)
             db.session.commit()  
-            return 'received'
+            return redirect ('/login')
         else:
-            return redirect ('/register')
+            return 'Este usuario ya existe'
 
 @ruta_usuario.route("/usuarios", methods=["GET"])
 def usuarios():
