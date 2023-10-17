@@ -14,15 +14,15 @@ def ingresar():
     password = request.form['password']
     Usuario = usuario.query.filter_by(nombre=user, contraseña=password).first()
     if Usuario:
-        session['user'] = Usuario.nombre
-        return render_template('homepage.html', Usuario = session['user'])    
+        session['user'] = {'id': Usuario.id, 'nombre': Usuario.nombre}
+        return render_template('homepage.html', Usuario = session['user']['nombre']), session    
     else:
         return "Usuario o contraseña incorrectos"
 
 @app.route('/cerrar')
 def cerrar():
-    session.pop('Usuario',None)
-    return redirect('/login')
+    session.pop('user',None)
+    return redirect('/')
 
 
 @app.route('/add_user', methods = ['POST'])
@@ -37,7 +37,7 @@ def add_user():
             new_user = usuario(nombre, correo,contraseña)
             db.session.add(new_user)
             db.session.commit()  
-            return 'received'
+            return redirect('/login')
         else:
             return redirect ('/register')
 

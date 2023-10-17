@@ -15,8 +15,13 @@
                         <li id="routecom"class="items"><a href="/map">Rutas</a></li>
                         <li class="items"><a href="">Comunidad</a></li>
                         <li class="items div"><div>|</div></li>
-                        <button id="signup" class="items btn">Sign Up</button>
+                        {% if session %}
+                            <li class="items"><p id="name_user"> {{session['user']['nombre']}}</p></li>
+                            <li class="items close" id="btn-close"><a href="/cerrar">Salir</a></li>
+                        {% else %}
+                        <button id="sigup" class="items btn">Sign Up</button>
                         <button id="signin" class="items btn">Sign In</button>
+                        {% endif %}
                     </ul>
                 </nav>
             </header>
@@ -28,34 +33,24 @@
                 </div>
                 <hr>
                 <div class="messages-container">
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
-                    <div class="box-message"></div>
+                    {% if datos %}
+                        {% for dato in datos %}
+                            <div class="box-message">
+                                <p>@{{ dato[1] }}</p>
+                                <p>{{ dato[0].mensaje }}</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No hay datos en la base de datos.</p>
+                    {% endif %}
                 </div>
                 <hr>
-                <div class="input-container">
-                    <input id="messageInput" type="message" placeholder="type here" name="message">
-                    <button type="submit">Enviar</button>
-                </div>
+                <form action="/publicar"  method="POST">
+                    <div class="input-container">
+                        <input id="messageInput" type="message" placeholder="type here" name="message">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
         </div>
 
         

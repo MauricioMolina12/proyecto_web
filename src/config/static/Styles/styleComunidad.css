@@ -41,7 +41,7 @@ hr {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     max-width: 90%;
     margin: auto;
-    gap: 28px;
+    gap: 40px;
     margin-bottom: 40px;
 }
 
@@ -50,6 +50,20 @@ hr {
     width: 220px;
     height: 180px;
     border-radius: 8px;
+    padding: 20px;
+}
+
+.box-message p:first-of-type{
+    color: #5DB7DE;
+    font-family: 'Righteous';
+    font-size: 28px;
+}
+
+.box-message p:last-of-type{
+    font-family: 'Arimo';
+    font-size: 20px;
+    position: relative;
+    top: 20px;
 }
 
 .input-container {

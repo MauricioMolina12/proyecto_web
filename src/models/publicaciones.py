@@ -4,12 +4,10 @@ class publicaciones(db.Model):
     __tablename__ = "publicaciones"
 
     id_publicaciones = db.Column(db.Integer, primary_key = True)
-    comunidad = db.Column(db.Integer, db.ForeignKey('comunidad.id_comunidad'))
     usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id'))
     mensaje = db.Column(db.Text)
 
-    def __init__(self, comunidad,usuario,mensaje):
-        self.comunidad = comunidad
+    def __init__(self,usuario,mensaje):
         self.usuario = usuario
         self.mensaje = mensaje
 
@@ -18,4 +16,4 @@ with app.app_context():
 
 class PublicacionesSchema(ma.Schema):
     class Meta:
-        fields = ('id_publicaciones', 'comunidad','usuario','mensaje')
+        fields = ('id_publicaciones','usuario','mensaje')

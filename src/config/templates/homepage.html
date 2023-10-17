@@ -1,5 +1,6 @@
 {% extends './layout.html' %}
 {% block title %}RutaSegura{% endblock %}
+
 {% block header %}
         <div class="header-container">
             <header class="header">
@@ -15,9 +16,8 @@
                         <li class="items"><a href="/#aside">¿Quienes somos?</a></li>
                         <li id="com" class="items"><a href="/comunidad">Comunidad</a></li>
                         <li class="items div"><div>|</div></li>
-
-                        {% if Usuario %}
-                            <li class="items"><p id="name_user"> {{Usuario}}</p></li>
+                        {% if session  %}
+                            <li class="items"><p id="name_user"> {{session['user']['nombre']}}</p></li>
                             <li class="items close" id="btn-close"><a href="/cerrar">Salir</a></li>
                         {% else %}
                         <button id="sigup" class="items btn">Sign Up</button>
