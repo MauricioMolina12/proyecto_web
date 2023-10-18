@@ -56,15 +56,31 @@ hr {
 .box-message .header-message p:first-of-type{
     color: #5DB7DE;
     font-family: 'Righteous';
-    font-size: 24px;
+    font-size: 18px;
     bottom: 20px;
 }
 
-.box-message .header-message{
-    display: flex;
-    border: 1px solid black;
-    justify-content: space-between;
+.messages-container{
+    position: relative;
 }
+
+.header-message{
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.header-message img{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+
 
 
 .box-message p:last-of-type{
