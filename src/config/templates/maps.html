@@ -40,12 +40,15 @@
 {% block body %}
 
         <div id='map' style='width: 100%; height: 100vh;'>
-            <div class="route-form">
-                <h2>Ingresar información ruta</h2>
-                <input id="userInput" type="text" placeholder="Nombre ruta" name="rutaName">
-                <input id="userInput" type="date" name="DateRoute">
-                <input id="userInput" type="number" placeholder="Duracion" name="rutaDuracion">
-            </div>
+            <form id="form-route">
+                <div class="route-form">
+                    <h2>Ingresar información ruta</h2>
+                    <input id="userInput" type="text" placeholder="Nombre ruta" name="rutaName">
+                    <input id="userInput" type="date" name="DateRoute">
+                    <input id="userInput" type="number" placeholder="Duracion" name="rutaDuracion">
+                    <button id="registrar-ruta">Registrar ruta</button>
+                </div>
+            </form>
         </div>
             
 {% endblock %}
