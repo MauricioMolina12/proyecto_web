@@ -12,7 +12,7 @@ usuarios_schema = UsuarioSchema(many=True)
 def ingresar():
     user = request.form['user']
     password = request.form['password']
-    Usuario = usuario.query.filter_by(nombre=user, contraseña=password).first()
+    Usuario = usuario.query.filter_by(nombre=user, contraseña=password).first() 
     if Usuario:
         session['user'] = {'id': Usuario.id, 'nombre': Usuario.nombre}
         return render_template('homepage.html', Usuario = session['user']['nombre']), session    
@@ -39,7 +39,7 @@ def add_user():
             db.session.commit()  
             return redirect('/login')
         else:
-            return redirect ('/register')
+            return 'Este usuario ya existe'
 
 @ruta_usuario.route("/usuarios", methods=["GET"])
 def usuarios():

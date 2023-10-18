@@ -53,11 +53,19 @@ hr {
     padding: 20px;
 }
 
-.box-message p:first-of-type{
+.box-message .header-message p:first-of-type{
     color: #5DB7DE;
     font-family: 'Righteous';
-    font-size: 28px;
+    font-size: 24px;
+    bottom: 20px;
 }
+
+.box-message .header-message{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+
 
 .box-message p:last-of-type{
     font-family: 'Arimo';

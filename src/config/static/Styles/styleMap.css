@@ -1,8 +1,4 @@
-#map {
-    height: 500px;
-    width: 100%;
-    z-index: -1;
-}
+
 
 /* styles.css */
 
@@ -65,4 +61,14 @@
 
 #name_user{
     color: white;
+}
+
+#top-left{
+    width: 20px;
+    height: 80px;
+    background-color: white;
+    z-index: ;
+    position: absolute;
+    top: 40px;
+    left: 0;
 }
