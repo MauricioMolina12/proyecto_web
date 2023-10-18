@@ -36,10 +36,12 @@
                     {% if datos %}
                         {% for dato in datos[::-1] %}
                             <div class="box-message">
+                                <p>@{{ dato[1] }}</p>
+                                {% if session['user']['id'] == dato[2] %}
                                 <div class="header-message">
-                                    <p>@{{ dato[1] }}</p>
-                                    <img src="../static/Multimedia/borrar (1).png" alt="delete" width="28px" height="28px">
+                                    <a href="/deletepublicacion/{{ dato[0].id_publicaciones}}"><img src="../static/Multimedia/borrar (1).png"  alt="delete" width="28px" height="28px"></a>
                                 </div>
+                                {% endif %}
                                 <p>{{ dato[0].mensaje }}</p>
                             </div>
                         {% endfor %}
