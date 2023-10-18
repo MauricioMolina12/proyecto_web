@@ -8,7 +8,7 @@ document.getElementById("signin").addEventListener("click", function() {
 
 
 document.getElementById("ruta").addEventListener("click", function(){
-    window.location.href = "/map";
+    window.location.href = "/login";
 });
 
 document.getElementById("com").addEventListener("click", function(){

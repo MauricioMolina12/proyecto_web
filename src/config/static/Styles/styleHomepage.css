@@ -177,11 +177,10 @@ a {
 }
 
 
-.banner .items:nth-child(2) button {
+.banner .items:nth-child(2) a {
     width: 120px;
     height: 37px;
     position: relative;
-    bottom: 40px;
     background-color: transparent;
     border: 1px solid #fff;
     font-family: 'Arimo';
@@ -189,10 +188,13 @@ a {
     font-size: 19.5px;
     cursor: pointer;
     border-radius: 7px;
+    display: grid;
+    place-items: center;
+    top: 20px;
 }
 
 
-.banner .items:nth-child(2) button:hover {
+.banner .items:nth-child(2) a:hover {
     background-color: white;
     color: #3C3C3A;
 }
