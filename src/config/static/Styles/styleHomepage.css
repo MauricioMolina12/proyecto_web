@@ -79,13 +79,13 @@ body {
     height: 2px;
 }
 
-.nav .list a:hover {
+.nav .list a:hover:not([href="/cerrar"]) {
     color: #5DB7DE;
     transform: translateX(-.4rem);
 
 }
 
-.nav .list a:hover::before {
+.nav .list a:hover::before{
     background-color: white;
     transform: scaleX(1);
 }

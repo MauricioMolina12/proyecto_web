@@ -43,51 +43,33 @@ hr {
     margin: auto;
     gap: 40px;
     margin-bottom: 40px;
+    width: fit-content;
 }
 
 .box-message {
     box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
     width: 220px;
-    height: 180px;
+    max-height: 180px;
     border-radius: 8px;
-    padding: 20px;
+    padding: 0 20px;
+    overflow-y: auto;
+    padding-bottom: 10px;
 }
 
-.box-message .header-message p:first-of-type{
+.box-message .header-message p:first-of-type {
     color: #5DB7DE;
     font-family: 'Righteous';
-    font-size: 18px;
+    font-size: 24px;
     bottom: 20px;
+    font-weight: 700;
 }
 
-.messages-container{
-    position: relative;
-}
-
-.header-message{
-    flex-direction: row;
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    height: fit-content;
-}
-
-.header-message img{
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-
-
-
-
-.box-message p:last-of-type{
+.box-message p:last-of-type {
     font-family: 'Arimo';
     font-size: 20px;
     position: relative;
     top: 20px;
+    font-weight: normal;
 }
 
 .input-container {
@@ -97,7 +79,7 @@ hr {
     align-items: center;
 }
 
-.input-container input{
+.input-container input {
     width: 70%;
     height: 3.5rem;
     border-radius: 10px;
@@ -108,12 +90,12 @@ hr {
 
 
 
-.input-container input::placeholder{
+.input-container input::placeholder {
     font-size: 17px;
     color: white;
 }
 
-.input-container button{
+.input-container button {
     height: 2.5rem;
     width: 12%;
     cursor: pointer;

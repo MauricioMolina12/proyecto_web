@@ -37,9 +37,23 @@ def add_user():
             new_user = usuario(nombre, correo,contraseña)
             db.session.add(new_user)
             db.session.commit()  
-            return redirect('/login')
-        else:
-            return 'Este usuario ya existe'
+            
+    user_exists = True 
+    
+    if user_exists:
+        response = {
+            "success": False,
+            "message": "Este usuario ya existe"
+        }
+    else:
+        response = {
+            "success": True,
+            "message": "Usuario registrado exitosamente"
+        }
+        return redirect('/login')
+    
+    return jsonify(response)
+
 
 @ruta_usuario.route("/usuarios", methods=["GET"])
 def usuarios():

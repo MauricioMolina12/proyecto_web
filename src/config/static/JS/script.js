@@ -7,6 +7,37 @@ const var_usuario= document.getElementById('userInput').value;
 const var_email = document.getElementById('emailInput').value;
 const var_password = document.getElementById('passwordInput').value;
 const var_confirmarP   = document.getElementById('confirmar').value;
+document.addEventListener('DOMContentLoaded', function() {
+    var formulario = document.querySelector('form');
+
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var formData = new FormData(formulario);
+
+        axios.post('/add_user', formData)
+            .then(function(response) {
+                if (response.data.success) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Éxito',
+                        text: response.data.message
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: response.data.message,
+                        footer: '<a href="">Why do I have this issue?</a>'
+                    });
+                }
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+            });
+    });
+});
+
 
 
 

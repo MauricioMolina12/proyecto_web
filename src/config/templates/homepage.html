@@ -14,12 +14,13 @@
                     <ul class="list mobile-menu">
                         <li class="items"><a href="/">Inicio</a></li>
                         <li class="items"><a href="/#aside">¿Quienes somos?</a></li>
+                        {% if session  %}
                         <li id="com" class="items"><a href="/comunidad">Comunidad</a></li>
                         <li class="items div"><div>|</div></li>
-                        {% if session  %}
-                            <li class="items"><p id="name_user"> {{session['user']['nombre']}}</p></li>
-                            <li class="items close" id="btn-close"><a href="/cerrar">Salir</a></li>
+                        <li class="items nameU"><p id="name_user"> {{session['user']['nombre']}}</p></li>
+                        <li class="items close" id="btn-close"><a href="/cerrar">Salir</a></li>
                         {% else %}
+                        <li class="items div"><div>|</div></li>
                         <button id="sigup" class="items btn">Sign Up</button>
                         <button id="signin" class="items btn">Sign In</button>
                         {% endif %}
