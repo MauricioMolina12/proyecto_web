@@ -1,4 +1,8 @@
-
+#map{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
 /* styles.css */
 
@@ -71,4 +75,34 @@
     position: absolute;
     top: 40px;
     left: 0;
+}
+
+.route-form{
+    background-color: #3D3D3B;
+    width: 30%;
+    height: fit-content;
+    float: right;
+    z-index: 10;
+    position: fixed;
+    right: 14px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.route-form input{
+    width: 80%;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 10px;
+}
+
+
+.route-form h2{
+    font-size: 22px;
 }

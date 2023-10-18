@@ -38,19 +38,19 @@ def add_user():
             db.session.add(new_user)
             db.session.commit()  
             
-    user_exists = True 
-    
-    if user_exists:
-        response = {
-            "success": False,
-            "message": "Este usuario ya existe"
-        }
-    else:
-        response = {
-            "success": True,
-            "message": "Usuario registrado exitosamente"
-        }
-        return redirect('/login')
+        user_exists = True 
+        
+        if user_exists:
+            response = {
+                "success": False,
+                "message": "Este usuario ya existe"
+            }
+        else:
+            response = {
+                "success": True,
+                "message": "Usuario registrado exitosamente"
+            }
+            return redirect('/login')
     
     return jsonify(response)
 
