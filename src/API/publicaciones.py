@@ -8,26 +8,34 @@ ruta_publicaciones = Blueprint("ruta_publicaciones",__name__)
 publicacion_schema = PublicacionesSchema()   
 publicaciones_schema = PublicacionesSchema(many=True)
 
+
+
 @app.route("/publicar", methods=["POST"])
 def savepublicacion():
     if 'user' in session:
-        nombre_usuario = session['user']['nombre']
         id_usuario = session['user']['id']
-        usuario = id_usuario
         mensaje = request.form['message']
-        new_publication = publicaciones(usuario,mensaje)
+        new_publication = publicaciones(id_usuario,mensaje)
         db.session.add(new_publication)
         db.session.commit()
         return redirect ('/comunidad')
     else:
         return redirect ('/login')
 
+        
+@app.route("/deletepublicacion/<id>", methods=["GET"])
+def deletepublication(id):
+    publication = publicaciones.query.get(id)
+    db.session.delete(publication)
+    db.session.commit()
+    return redirect ('/comunidad')
+
 
 @app.route("/comunidad", methods=["GET"])
 def publicacion():
-    datos = db.session.query(publicaciones, usuario.nombre).join(usuario, publicaciones.usuario == usuario.id).all()
+    datos = db.session.query(publicaciones, usuario.nombre,usuario.id).join(usuario, publicaciones.usuario == usuario.id).all()
+    print(datos)
     return render_template('comunidad.html', datos=datos)
-
 
 @ruta_publicaciones.route("/publicacion", methods=["GET"])
 def publicacion():

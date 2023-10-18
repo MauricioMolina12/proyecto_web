@@ -17,7 +17,7 @@ def ingresar():
         session['user'] = {'id': Usuario.id, 'nombre': Usuario.nombre}
         return render_template('homepage.html', Usuario = session['user']['nombre']), session    
     else:
-        return "Usuario o contraseña incorrectos"
+        return "Usuario o contraseña incorrectos"   
 
 @app.route('/cerrar')
 def cerrar():
